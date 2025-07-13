@@ -4,20 +4,156 @@
     font-size: 10px;
 }
 
+/*
+THIS WAS PART OF THE SKELETON
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-body {
-    font-family: "Open Sans", Arial, sans-serif;
-    min-height: 100vh;
-    background-color: #fafafa;
-    color: #262626;
-    padding-bottom: 3rem;
+*/
+
+/*HEADER*/
+header{
+    margin-top:30px;
+    margin-bottom:30px;
 }
 
-img {
-    display: block;
+
+/*PROFILE*/
+.profile-image img{
+    height:150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 5px solid #00775d;
+    float: left;
+    margin-right: 20px;
+    margin-top:-20px
+}
+
+/*fix Codespace_pets: make text smaller, not bold make it inline with buttons*/
+h1{
+    font-size:medium;
+    display: inline;
+    font-weight: normal;
+    margin-right:2%;
+}
+
+
+button{
+    font-size:12px;
+    border: 0px;
+}
+
+button:hover{
+    background-color: rgba(0, 0, 0, 0.219);
+    transition:0.3s;
+    border: 2px;
+}
+
+/*remove bullet points from list of posts, followers and following*/
+ul{
+    margin-top:30px;
+   list-style-type:none;
+}
+
+.profile-stat-count{
+    font-weight: bold; /*Makes numbers bold for each stat*/
+    
+}
+
+li{
+    float: left;
+    margin:10px;
+}
+
+.profile-bio{
+    font: size 12px;
+   position: absolute; /*Trying to position profile bio on new line*/
+   margin-top: 50px;
+   margin-left: 180px;
+}
+
+/*BODY & CONTAINER*/
+
+/*Making everything stick to the center of the webpage*/
+body, .container, .gallery{
+    width:500px;
+    margin-left:auto;
+    margin-right:auto;
+    align-content: center;
+}
+
+
+body {
+    padding-bottom: 15px;
+}
+
+
+/*GALLERY = IMAGES & TEXT*/
+.gallery{
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.gallery-image{
+    position: relative;
+    width:100%;
+    object-fit:cover;
+    height:200px;
+}
+
+
+
+.gallery-item-likes, .gallery-item-comments{
+    float:left; /*removes the line between the likes and comments*/
+    list-style-type: none; /*removes the bullet point before the like and comment icons*/
+    padding: 0; 
+    margin: 0;
+    margin-left: 10px;/*adds some space between lines and comments*/
+}
+
+/*hides the text and gallery icon that made the likes and comment box placing bad on some pictures*/
+.visually-hidden, .gallery-item-type{
+    display:none;
+}
+
+
+.gallery-item-info{
+    margin-top: -202px; /*to move info box to line up to the image*/
+    opacity: 0; /*sets the default of the information to transparent*/
+    background-color: rgba(12, 10, 10, 0.568);
+    color:white;
+    text-align:center;
+    padding:80px 0;
+    height:39px;
+}
+
+
+.gallery-item-info:hover{
+    opacity: 0.9;
+    transition: opacity 0.3s;
+    
+}
+
+/*FOOTER*/
+
+.loader{
+    margin-top:35px;
+    margin-left:220px;
+    border: 5px solid #00000000;
+    border-top: 5px solid #198a19;
+    border-left: 5px solid #198a19;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(200deg); }
+  100%{ transform: rotate(360deg); }
 }
